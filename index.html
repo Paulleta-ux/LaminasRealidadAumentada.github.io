@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#6B21A8" />
+  <title>Leyendas del Mundial AR</title>
+
+  <!-- A-Frame -->
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  <!-- MindAR Image Tracking -->
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+  <!-- A-Frame Extras (animation-mixer para gltf) -->
+  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="show-modal">
+
+  <!-- ═══════════════════════════════════════════
+       MODAL DE INICIO
+  ═══════════════════════════════════════════ -->
+  <div id="startup-modal" class="modal-overlay">
+    <div class="modal-card">
+
+      <h1 class="modal-title">Leyendas del<br><span class="title-accent">mundial AR</span></h1>
+
+      <div class="modal-steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <span>Permite el acceso a la cámara cuando se solicite</span>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <span>Apunta la cámara a una lámina compatible</span>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <span>Mira el contenido AR exclusivo aparecer</span>
+        </div>
+      </div>
+
+      <div class="players-section">
+        <p class="players-label">Láminas compatibles</p>
+        <div class="players-row">
+          <div class="player-card">
+            <img src="img/almiron.webp" alt="Miguel Almirón" class="player-card-img" />
+            <span class="player-card-code">Miguel Almirón<span class="player-tag">PAR 17</span></span>
+          </div>
+          <div class="player-card">
+            <img src="img/vozinha.webp" alt="Vozinha" class="player-card-img" />
+            <span class="player-card-code">Vozinha<span class="player-tag">CPV 2</span></span>
+          </div>
+        </div>
+      </div>
+
+      <button id="start-btn" class="start-btn">
+        <span>Iniciar experiencia</span>
+        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none">
+          <path d="M5 12H19M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <p class="modal-legal">Requiere cámara · Mejor en celular</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       HUD DE ESCANEO
+  ═══════════════════════════════════════════ -->
+  <div id="scanning-hud" class="scanning-hud hidden">
+    <div class="hud-top">
+      <button id="back-btn" class="hud-back-btn">✕ Salir</button>
+    </div>
+    <div class="scan-hint" id="scan-hint">
+      <div class="scan-pulse"></div>
+      <span>Apunta a una lámina Panini</span>
+    </div>
+    <div class="player-overlay hidden" id="player-overlay">
+      <div class="player-badge">
+        <span id="player-flag"></span>
+        <span id="player-name"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       CONTENEDOR DE ESCENA AR — se inyecta al iniciar
+  ═══════════════════════════════════════════ -->
+  <div id="ar-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
