@@ -41,7 +41,7 @@ function injectAndStartAR() {
       device-orientation-permission-ui="enabled: false"
     >
       <a-assets>
-        <a-asset-item id="almiron-model" src="assets/models/MiguelAlmiron-optimized.glb"></a-asset-item>
+        <a-asset-item id="almiron-model" src="assets/models/AlmironMiguel-optimized.glb"></a-asset-item>
         <a-asset-item id="vozinha-model" src="assets/models/vozinha-optimized.glb"></a-asset-item>
       </a-assets>
 
