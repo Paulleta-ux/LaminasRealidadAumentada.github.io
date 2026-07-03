@@ -85,7 +85,17 @@ function destroyAR() {
       const sys = arScene.systems['mindar-image-system'];
       if (sys && sys.stop) sys.stop();
     } catch (e) {}
+
+    const video = arScene.parentElement.querySelector('video');
+    if (video && video.srcObject) {
+      video.srcObject.getTracks().forEach(track => track.stop());
+      video.srcObject = null;
+    }
   }
+
+  // Limpia los overlays de MindAR que quedan pegados al body
+  document.querySelectorAll('.mindar-ui-overlay').forEach(el => el.remove());
+
   arContainer.innerHTML = '';
   activeTarget = null;
   scanHint.style.opacity = '1';
