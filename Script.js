@@ -35,7 +35,7 @@ function injectAndStartAR() {
   arContainer.innerHTML = `
     <a-scene
       id="ar-scene"
-      mindar-image="imageTargetSrc: assets/targets/targets.mind; filterMinCF:0.001; filterBeta:100; missTolerance:10; warmupTolerance:5; uiLoading: no; uiError: no;"
+      mindar-image="imageTargetSrc: assets/targets/targets.mind; filterMinCF:0.001; filterBeta:100; missTolerance:10; warmupTolerance:5"
       renderer="colorManagement: true"
       vr-mode-ui="enabled: false"
       device-orientation-permission-ui="enabled: false"
@@ -51,7 +51,7 @@ function injectAndStartAR() {
         <a-gltf-model
           src="#almiron-model"
           position="0 0 0"
-          scale="10 10 10"
+          scale="20 20 20"
           rotation="0 0 0"
           animation-mixer="clip: *; loop: repeat; timeScale: 1">
         </a-gltf-model>
