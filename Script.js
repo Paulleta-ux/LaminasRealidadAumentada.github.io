@@ -51,7 +51,7 @@ function injectAndStartAR() {
         <a-gltf-model
           src="#almiron-model"
           position="0 0 0"
-          scale="20 20 20"
+          scale="21 21 21"
           rotation="0 0 0"
           animation-mixer="clip: *; loop: repeat; timeScale: 1">
         </a-gltf-model>
